@@ -1,12 +1,12 @@
-package com.seniorjavasky.geoquiz
+package com.seniorjavasky.geoquiz.presentation
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.seniorjavasky.geoquiz.R
 
 private const val EXTRA_ANSWER_IS_TRUE="com.seniorjavasky.geoquiz.answer_is_true"
 private const val EXTRA_ANSWER_SHOWN="com.seniorjavasky.geoquiz.answer_shown"
@@ -41,15 +41,15 @@ class CheatActivity : AppCompatActivity() {
     }
 
     private fun setAnswerShownResult(isAnswerShown: Boolean) {
-        val data=Intent().apply{
+        val data= Intent().apply{
             putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown)
         }
-        setResult(Activity.RESULT_OK,data)
+        setResult(RESULT_OK,data)
 
     }
 
     companion object{
-        fun newIntent(packageContext: Context, answerIsTrue:Boolean): Intent{
+        fun newIntent(packageContext: Context, answerIsTrue:Boolean): Intent {
             return Intent(packageContext, CheatActivity::class.java).apply{
                 putExtra(EXTRA_ANSWER_IS_TRUE, answerIsTrue)
 

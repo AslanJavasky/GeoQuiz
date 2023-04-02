@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GeoQuiz">
         <activity
-            android:name="com.seniorjavasky.geoquiz.CheatActivity"
+            android:name="com.seniorjavasky.geoquiz.presentation.CheatActivity"
             android:exported="false"/>
 
         <activity
-            android:name="com.seniorjavasky.geoquiz.MainActivity"
+            android:name="com.seniorjavasky.geoquiz.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

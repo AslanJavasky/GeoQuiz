@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".CheatActivity">
+    tools:context=".presentation.CheatActivity">
 
     <TextView
         android:layout_width="wrap_content"

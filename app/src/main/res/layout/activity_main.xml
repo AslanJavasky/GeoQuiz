@@ -6,36 +6,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".presentation.MainActivity"
     android:gravity="center"
     android:orientation="vertical">
 
 
-    <TextView
-        android:id="@+id/question_text_view"
+    <com.seniorjavasky.geoquiz.presentation.custom_view.CustomQuestionAndAnswers
+        android:id="@+id/custom_questions_and_answers"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:gravity="center"
-        tools:text="@string/question_australia" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/true_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/true_button" />
-
-        <Button
-            android:id="@+id/false_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/false_button" />
-    </LinearLayout>
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/cheat_button"
