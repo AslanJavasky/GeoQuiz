@@ -67,6 +67,9 @@ class MainActivity : AppCompatActivity() {
     private fun updateQuestion() {
         val questionTextResId = quizViewModel.currentQuestionText
         binding.customQuestionsAndAnswers.setQuestionText(questionTextResId)
+        var currentIndex=quizViewModel.currentIndex
+        binding.progressBar.progress=++currentIndex
+
     }
 
     private fun checkAnswer(userAnswer: Boolean) {

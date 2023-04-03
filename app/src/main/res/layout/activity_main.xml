@@ -10,6 +10,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:indeterminateOnly="false"
+        android:max="6"
+        android:rotation="-90"
+        android:progressDrawable="@drawable/circle_progress"
+        android:layout_width="200dp"
+        android:layout_height="200dp" />
 
     <com.seniorjavasky.geoquiz.presentation.custom_view.CustomQuestionAndAnswers
         android:id="@+id/custom_questions_and_answers"
@@ -32,5 +40,7 @@
         android:drawableEnd="@drawable/arrow_right"
         android:padding="4dp"
         />
+
+
 
 </LinearLayout>
