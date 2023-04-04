@@ -1,5 +1,6 @@
 package com.seniorjavasky.geoquiz.presentation
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -13,7 +14,7 @@ import com.seniorjavasky.geoquiz.databinding.ActivityMainBinding
 private const val KEY_INDEX = "index"
 private const val REQUEST_CODE_CHEAT = 0
 private const val EXTRA_ANSWER_SHOWN = "com.seniorjavasky.geoquiz.answer_shown"
-private lateinit var binding:ActivityMainBinding
+private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,13 +38,17 @@ class MainActivity : AppCompatActivity() {
             quizViewModel.moveToNext()
             updateQuestion()
         }
+
         binding.cheatButton.setOnClickListener {
+            val options =
+                ActivityOptions.makeSceneTransitionAnimation(this)
+                    .toBundle()
             val answerIsTrue = quizViewModel.currentQuestionAnswer
             val intent = CheatActivity.newIntent(
                 this@MainActivity,
                 answerIsTrue
             )
-            startActivityForResult(intent, REQUEST_CODE_CHEAT)
+            startActivityForResult(intent, REQUEST_CODE_CHEAT, options)
         }
         updateQuestion()
     }
@@ -67,8 +72,8 @@ class MainActivity : AppCompatActivity() {
     private fun updateQuestion() {
         val questionTextResId = quizViewModel.currentQuestionText
         binding.customQuestionsAndAnswers.setQuestionText(questionTextResId)
-        var currentIndex=quizViewModel.currentIndex
-        binding.progressBar.progress=++currentIndex
+        var currentIndex = quizViewModel.currentIndex
+        binding.progressBar.progress = ++currentIndex
 
     }
 
